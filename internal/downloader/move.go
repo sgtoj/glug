@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -66,7 +65,6 @@ func findBinaryPath(srcDir string, tool registry.ToolData) (string, error) {
 	entries, err := os.ReadDir(srcDir)
 	if err == nil && len(entries) == 1 && !entries[0].IsDir() {
 		candidatePath = filepath.Join(srcDir, entries[0].Name())
-		log.Println("candidatePath1", candidatePath)
 		return candidatePath, nil
 	}
 

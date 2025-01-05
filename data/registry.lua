@@ -36,8 +36,6 @@ glug.register_tool("buildx", {
 			{{$arch = "arm-v7"}}
     {{- else if or (eq .Arch "aarch64") (eq .Arch "arm64") -}}
 			{{$arch = "arm64"}}
-		{{- else if eq .Arch "x86_64" -}}
-			{{$arch = "amd64"}}
 		{{- end -}}
 		https://github.com/{{.Owner}}/{{.Repo}}/releases/download/{{.Version}}/{{.Name}}-{{.Version}}.{{$os}}-{{$arch}}{{$ext}}
   ]],
@@ -63,8 +61,8 @@ glug.register_tool("docker-compose", {
 			{{$arch = "armv7"}}
     {{- else if or (eq .Arch "aarch64") (eq .Arch "arm64") -}}
 			{{$arch = "aarch64"}}
-		{{- else if eq .Arch "x86_64" -}}
-			{{$arch = "amd64"}}
+		{{- else if eq .Arch "amd64" -}}
+			{{$arch = "x86_64"}}
 		{{- end -}}
 		https://github.com/{{.Owner}}/{{.Repo}}/releases/download/{{.Version}}/{{.Name}}-{{$os}}-{{$arch}}
   ]],
@@ -114,8 +112,8 @@ glug.register_tool("lazydocker", {
 			{{$arch = "arm-v7"}}
     {{- else if or (eq .Arch "aarch64") (eq .Arch "arm64") -}}
 			{{$arch = "arm64"}}
-		{{- else if eq .Arch "x86_64" -}}
-			{{$arch = "amd64"}}
+		{{- else if eq .Arch "amd64" -}}
+			{{$arch = "x86_64"}}
 		{{- end -}}
 		https://github.com/{{.Owner}}/{{.Repo}}/releases/download/{{.Version}}/{{.Name}}_{{.VersionNumber}}_{{$os}}_{{$arch}}.{{$ext}}
   ]],
@@ -141,8 +139,8 @@ glug.register_tool("lazygit", {
 			{{$arch = "arm-v7"}}
     {{- else if or (eq .Arch "aarch64") (eq .Arch "arm64") -}}
 			{{$arch = "arm64"}}
-		{{- else if eq .Arch "x86_64" -}}
-			{{$arch = "amd64"}}
+		{{- else if eq .Arch "amd64" -}}
+			{{$arch = "x86_64"}}
 		{{- end -}}
 		https://github.com/{{.Owner}}/{{.Repo}}/releases/download/{{.Version}}/{{.Name}}_{{.VersionNumber}}_{{$os}}_{{$arch}}.{{$ext}}
   ]],
