@@ -50,7 +50,7 @@ func Move(srcDir, dstDir string, tool registry.ToolData) (string, error) {
 	return dstPath, nil
 }
 
-// todo: need to find a better; this is sloppy
+// todo: need to find a better solution; this feels very sloppy
 func findBinaryPath(srcDir string, tool registry.ToolData) (string, error) {
 	// check binary is just named its name
 	candidatePath := filepath.Join(srcDir, tool.Name)

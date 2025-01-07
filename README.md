@@ -2,7 +2,7 @@
 
 `glug` is a cli tool to download binaries from github (and potentially other
 sources) in a quick, scriptable, and easily repeatable manner. It was developed
-as a bored side project to address personal tooling needs. It may be useful to
+as a bored side project to explore using lua from go. It may be useful to
 others, but the future of this project is not guaranteed.
 
 ## features
@@ -21,8 +21,8 @@ others, but the future of this project is not guaranteed.
    ```bash
    glug get fzf
    ```
-3. the binary will be placed in the configured directory (`./tmp/bin` by
-   default, or per your own config)
+3. binary will be placed in the configured directory (`./tmp/bin` by default,
+   or per your own config)
 
 ## how it works
 
@@ -41,7 +41,7 @@ are welcome, but please understand that responses may be slow.
 
 ## contributing
 
-Contributions, suggestions, or bug reports are always welcome! feel free to open
-an issue or pull request if you’d like to help. note that major changes may
+Contributions, suggestions, or bug reports are always welcome! Feel free to open
+an issue or pull request if you’d like to help. Note that major changes may
 require some discussion beforehand.
 
