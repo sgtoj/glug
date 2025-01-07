@@ -189,3 +189,23 @@ glug.register_tool("op", {
 		https://cache.agilebits.com/dist/1P/op2/pkg/{{.Version}}/op_{{$os}}_{{$arch}}_{{.Version}}.zip
   ]],
 })
+
+glug.register_tool("tilt", {
+  owner = "tilt-dev",
+  repo = "tilt",
+  url_template = [[
+    {{$os := .OS}}
+		{{$arch := .Arch}}
+  	{{ $ext := "tar.gz" }}
+		{{- if eq .Arch "aarch64" -}}
+			{{ $arch = "arm64" }}
+		{{- end -}}
+		{{ if HasPrefix .OS "ming" -}}
+			{{$os = "windows"}}
+  	  {{$ext = "zip" }}
+		{{- else if eq .OS "darwin" -}}
+			{{$os = "mac"}}
+		{{- end -}}
+		https://github.com/{{.Owner}}/{{.Repo}}/releases/download/{{.Version}}/{{.Name}}.{{.VersionNumber}}.{{$os}}.{{$arch}}.{{$ext}}
+  ]],
+})
